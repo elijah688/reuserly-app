@@ -1,0 +1,23 @@
+<ion-app>
+  <ion-menu contentId='side-nav' side="start" type="push">
+    <!-- <ion-header>
+      <ion-toolbar color="danger">
+        <ion-title class='ion-text-center'>End Menu</ion-title>
+      </ion-toolbar>
+    </ion-header> -->
+    <ion-content>
+      <div class="banner">
+        <img src="https://scontent.flhr4-2.fna.fbcdn.net/v/t1.0-9/52258621_372525180248556_2129797771538989056_n.png?_nc_cat=111&_nc_ohc=VROtvgRRKRwAQnCCAPrCCs00qndq09svBbpaB0Eq7RLazqBiESKvnvJvA&_nc_ht=scontent.flhr4-2.fna&oh=85dfe57be1032f60a4858c1515599715&oe=5E743D92" alt="reuserly_logo">
+      </div>
+      <ion-list *ngFor="let tech of techs">
+        <ion-item [routerLink]="['/tech.title']" routerLinkActive="router-link-active " routerDirection='forward' >
+          <ion-icon slot="start" [name]="tech.icon" [style.color]="tech.color"></ion-icon>
+          <ion-label>
+            <h3>{{tech.title}}</h3>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id='side-nav' ></ion-router-outlet>
+</ion-app>

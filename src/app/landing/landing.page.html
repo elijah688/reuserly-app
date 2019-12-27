@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot='start'>
+      <ion-menu-button color="dark">
+
+      </ion-menu-button>
+      <ion-button fill='clear'>
+        <img [routerLink]="['/landing']" routerLinkActive="router-link-active" routerDirection='forward' 
+          src="https://scontent.flhr4-2.fna.fbcdn.net/v/t1.0-9/52258621_372525180248556_2129797771538989056_n.png?_nc_cat=111&_nc_ohc=VROtvgRRKRwAQnCCAPrCCs00qndq09svBbpaB0Eq7RLazqBiESKvnvJvA&_nc_ht=scontent.flhr4-2.fna&oh=85dfe57be1032f60a4858c1515599715&oe=5E743D92" alt="reuserly_logo">
+      </ion-button>
+    </ion-buttons>
+    <ion-title class='ion-text-center'>landing</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content
+  [scrollEvents]="true"
+  (ionScroll)='logScroll($event)'>
+  <div class="banner">
+    <img src="https://scontent.flhr4-1.fna.fbcdn.net/v/t1.0-9/s960x960/52276928_372458733588534_7067715731810418688_o.jpg?_nc_cat=106&_nc_ohc=U_WYdodt8ZYAQl0D3dJMFQPrJuJQ2J8D6cePFRzE6Skr9i1uuiGcqmZlw&_nc_ht=scontent.flhr4-1.fna&oh=b6ba2d9bf8b8f70547d22cdfffce4400&oe=5EA69FD9" alt="reuserly_banner">
+    <h1 #bannerTitle >“The Greatest Threat to Our Planet Is the Belief That Someone Else Will Save It” - Robert Swan</h1>
+  </div>
+  <div style='height:2000px'></div>
+</ion-content>
