@@ -16,26 +16,16 @@
       </ion-col>
       
       <ion-col>
-        <ion-card>
-          <ion-slides #slides pager="false" scrollbar='false' [options]="slideOpts">
-            <ion-slide>
-              <img src="../../assets/iphone.jpg" />
-              <h1>Slide 1</h1>
-            </ion-slide>
-            <ion-slide>
-              <img src="../../assets/iphone.jpg" />
-              <h1>Slide 2</h1>
-            </ion-slide>
-            <ion-slide>
-              <img src="../../assets/iphone.jpg" />
-              <h1>Slide 3</h1>
+        <ion-card *ngFor="let p of products">
+          <ion-slides  #slides pager="false" scrollbar='false' [options]="slideOpts">
+            <ion-slide *ngFor="let c of p.colors">
+              <img [src]="c.image" [alt]='c.value'/>
+              <h1 [ngClass]="c.value">{{ c.value | uppercase}}</h1>
             </ion-slide>
           </ion-slides>
           <ion-card-header>
             <ion-buttons>
-              <ion-button>1</ion-button>
-              <ion-button>2</ion-button>
-              <ion-button (click)='slideTo(3)'>3</ion-button>
+              <ion-button *ngFor="let c of p.colors; let i = index" [ngClass]="c.value" (click)='slideTo(i)'>{{i}}</ion-button>
             </ion-buttons>
             <ion-card-title>Reusable Straws (Blue)</ion-card-title>
             <ion-card-subtitle>$29.99</ion-card-subtitle>
