@@ -40,27 +40,40 @@ ion-grid
                 color: #b76e79
 
             ion-card
-                ion-slides
-                    ion-slide
-                        display: flex
-                        flex-direction: column
-                        align-items: center
-                        justify-content: center
-                        img
-                            object-fit: cover
-                            border: 1px solid black
-                            border-radius: 50%
-                            height: 50vh
-                            width: 50vh
                 ion-card-header
+                    ion-slides
+                        ion-slide
+                            display: flex
+                            flex-direction: column
+                            align-items: center
+                            justify-content: center
+                            img
+                                object-fit: cover
+                                border: 0.05rem solid black
+                                border-radius: 50%
+                                height: 50vh
+                                width: 50vh
+                ion-card-content
                     ion-buttons
                         display: flex
                         justify-content: center
                         align-items: center
                         ion-button
+                            color: transparent
+                            --color: transparent
                             border-radius: 50%
-                            height: 5vh
-                            width: 5vh
+                            --border-radius: 50%
+                            height: 7vh
+                            width: 7vh
+                          
+                        .uncolored-product-button
+                            color: black
+                            --background: var(--ion-color-light)
+                            --background-hover: var(--ion-color-medium)
+                            --background-activated: var(--ion-color-medium)
+                            --background-focused: var(--ion-color-medium)
+
+
                         .black
                             background-color: black
                         .blue

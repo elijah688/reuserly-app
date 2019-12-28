@@ -1,5 +1,4 @@
-import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
-import { IonSlides } from '@ionic/angular';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ShopService } from './shop.service';
 import { Product } from './product.model';
@@ -17,7 +16,6 @@ export class ShopPage implements OnInit, OnDestroy {
   private prodsSubscription:Subscription = new Subscription();
   products:Product[]=[];
 
-  @ViewChild('slides', {static:false}) slides:IonSlides
   constructor(private shopServ:ShopService) { }
 
   ngOnInit() {
@@ -32,8 +30,8 @@ export class ShopPage implements OnInit, OnDestroy {
     this.prodsSubscription.unsubscribe()
   }
 
-  slideTo(slideNumber:number){
-    this.slides.slideTo(slideNumber);
+  hasNumber(color:string) {
+    return /\d/.test(color);
   }
 
 }
