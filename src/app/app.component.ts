@@ -20,8 +20,14 @@ export class AppComponent {
     {
       'title': 'Protectors',
       'icon': 'phone-portrait',
-      'link' : '/protector',
+      'link' : '/protectors',
       'color': '#0CA9EA'
+    },
+    {
+      'title': 'Flutes',
+      'icon': 'wine',
+      'link' : '/flutes',
+      'color': '#b76e79'
     },
     {
       'title': 'Reuserly Books',
@@ -30,7 +36,6 @@ export class AppComponent {
       'color': '#F46529'
     },
   ];
-
 
 
 

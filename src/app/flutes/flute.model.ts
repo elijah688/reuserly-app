@@ -1,6 +1,6 @@
 import { Color } from '../color.model';
 
-export interface Straw{
+export interface Flute{
     id:string,
     title:string,
     description:string[],

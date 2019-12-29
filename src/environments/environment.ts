@@ -6,6 +6,7 @@ export const environment = {
   production: false,
   strawsApiUrl: 'http://localhost:3000/api/straws',
   protectorsApiUrl: 'http://localhost:3000/api/protectors',
+  flutesApiUrl: 'http://localhost:3000/api/flutes',
   booksApiUrl: 'http://localhost:3000/api/books',
 };
 

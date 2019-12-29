@@ -16,7 +16,6 @@ export class StrawsPage implements OnInit {
   
   private strawsSub:Subscription = new Subscription();
   straws:Straw[];
-  scrollTop:number;
 
   constructor(private shopServ:ShopService) { }
 

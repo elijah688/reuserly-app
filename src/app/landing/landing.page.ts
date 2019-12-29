@@ -16,8 +16,14 @@ export class LandingPage implements OnInit, AfterViewChecked {
     {
       'title': 'Protectors',
       'icon': 'phone-portrait',
-      'link' : '/protector',
+      'link' : '/protectors',
       'color': '#0CA9EA'
+    },
+    {
+      'title': 'Flutes',
+      'icon': 'wine',
+      'link' : '/flutes',
+      'color': '#b76e79'
     },
     {
       'title': 'Reuserly Books',
@@ -67,13 +73,6 @@ export class LandingPage implements OnInit, AfterViewChecked {
   ngAfterViewChecked(): void {
     this.bannerTitle.nativeElement.style.transform = `translateY(${this.scrollTop/5}%)`
     this.backdrop.nativeElement.style.opacity = `${this.scrollTop/5}%`
-   
-   
-    if(this.scrollTop>=1176){
-      const booksScrollTop:number = (this.scrollTop - 1176)/20;
-
-      // this.booksLogo.nativeElement.style.transform = `translateY(${booksScrollTop}%)`
-    }
   }
 
 
