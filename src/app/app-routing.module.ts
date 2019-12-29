@@ -2,14 +2,10 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'straws', pathMatch: 'full' },
+  { path: '', redirectTo: 'landing', pathMatch: 'full' },
   {
     path: 'landing',
     loadChildren: () => import('./landing/landing.module').then( m => m.LandingPageModule)
-  },
-  {
-    path: 'shop',
-    loadChildren: () => import('./shop/shop.module').then( m => m.ShopPageModule)
   },
   {
     path: 'straws',

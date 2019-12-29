@@ -13,8 +13,6 @@ export class StrawsPage implements OnInit {
     initialSlide: 0,
     speed: 400
   };
-  @ViewChildren('sideImage') sideImages:QueryList<ElementRef<HTMLDivElement>>; 
-  @ViewChildren('sideImageTitle') sideImageTitles:QueryList<ElementRef<HTMLHeadingElement>>; 
   
   private strawsSub:Subscription = new Subscription();
   straws:Straw[];
@@ -30,26 +28,12 @@ export class StrawsPage implements OnInit {
     })   
   }
 
-  ngAfterViewChecked(): void {
-    if(this.sideImages.length!==0){
-      this.sideImages.forEach((e,i)=>{
-        e.nativeElement.style.backgroundPosition = `${(-this.scrollTop/(i+1))}px`
-      })
-      // this.sideImageTitles.forEach(e,i)=>{
-      //   e.nativeElement.style.backgroundPosition = `${(-this.scrollTop/(i+1))}px`
-      // })
-    }
-  }
   ngOnDestroy(): void {
     this.strawsSub.unsubscribe()
   }
 
   hasNumber(color:string) {
     return /\d/.test(color);
-  }
-
-  logScroll(event:CustomEvent){
-    this.scrollTop = event.detail.scrollTop;
   }
 
 }

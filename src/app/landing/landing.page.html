@@ -6,19 +6,190 @@
       </ion-menu-button>
       <ion-button fill='clear'>
         <img [routerLink]="['/landing']" routerLinkActive="router-link-active" routerDirection='forward' 
-          src="https://scontent.flhr4-2.fna.fbcdn.net/v/t1.0-9/52258621_372525180248556_2129797771538989056_n.png?_nc_cat=111&_nc_ohc=VROtvgRRKRwAQnCCAPrCCs00qndq09svBbpaB0Eq7RLazqBiESKvnvJvA&_nc_ht=scontent.flhr4-2.fna&oh=85dfe57be1032f60a4858c1515599715&oe=5E743D92" alt="reuserly_logo">
+          src="https://i.ibb.co/18x47wV/reuserly-logo.png" alt="reuserly_logo">
       </ion-button>
     </ion-buttons>
-    <ion-title class='ion-text-center'>landing</ion-title>
+    <!-- <ion-title class='ion-text-center'>landing</ion-title> -->
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="[s.link]" routerLinkActive="active" routerDirection='forward' [style.color]='s.color' *ngFor="let s of stores">
+        <ion-icon [name]='s.icon'></ion-icon>
+        <ion-label>{{s.title}}</ion-label>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content
   [scrollEvents]="true"
   (ionScroll)='logScroll($event)'>
-  <div class="banner">
-    <img src="https://scontent.flhr4-1.fna.fbcdn.net/v/t1.0-9/s960x960/52276928_372458733588534_7067715731810418688_o.jpg?_nc_cat=106&_nc_ohc=U_WYdodt8ZYAQl0D3dJMFQPrJuJQ2J8D6cePFRzE6Skr9i1uuiGcqmZlw&_nc_ht=scontent.flhr4-1.fna&oh=b6ba2d9bf8b8f70547d22cdfffce4400&oe=5EA69FD9" alt="reuserly_banner">
-    <h1 #bannerTitle >“The Greatest Threat to Our Planet Is the Belief That Someone Else Will Save It” - Robert Swan</h1>
+
+  <div #banner class="banner">
+    <div #backdrop class="backdrop">
+     
+    </div>
+    <h1 #bannerTitle >
+      <b>
+        “The Greatest Threat to Our Planet Is the Belief That Someone Else Will Save It” - Robert Swan
+      </b>
+    </h1>   
   </div>
-  <div style='height:2000px'></div>
+
+  <ion-card>
+
+    <ion-grid class='ion-no-padding'>
+      <ion-row >
+
+        <ion-col class='ion-no-padding' size-xs=12 size-sm=12 size-md=6 size-lg=6 size-xl=6>
+
+
+          <img src="https://i.ibb.co/KDyRyrz/straws.jpg" />
+          
+        </ion-col>
+
+        <ion-col size-xs=12 size-sm=12 size-md=6 size-lg=6 size-xl=6>
+
+          <ion-card-header>
+            <ion-card-subtitle>Destination</ion-card-subtitle>
+            <ion-card-title>Madison, WI</ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+            Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the Wisconsin Territory in 1836.
+            <ion-toolbar>
+              <ion-buttons>
+                <ion-button>
+                  <ion-icon name='color-wand'></ion-icon>
+                  <ion-label>STRAWS</ion-label>
+                </ion-button>
+              </ion-buttons>
+            </ion-toolbar>
+          </ion-card-content>
+
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  
+  </ion-card>
+
+
+
+  <ion-card>
+
+    <ion-grid class='ion-no-padding'>
+      <ion-row class='protector-row'>
+
+        <ion-col  size-xs=12 size-sm=12 size-md=6 size-lg=6 size-xl=6>
+
+          <ion-card-header>
+            <ion-card-subtitle>Destination</ion-card-subtitle>
+            <ion-card-title>Madison, WI</ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+            Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the Wisconsin Territory in 1836.
+          </ion-card-content>
+
+        </ion-col>
+
+        <ion-col class='ion-no-padding' size-xs=12 size-sm=12 size-md=6 size-lg=6 size-xl=6>
+
+          <img src="https://i.ibb.co/HDk1hQn/iphone.jpg" />
+
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </ion-card>
+
+  <ion-card>
+
+    <ion-grid class='ion-no-padding'>
+      <ion-row >
+
+        <ion-col class='ion-no-padding' size-xs=12 size-sm=12 size-md=6 size-lg=6 size-xl=6>
+
+          <img src="https://i.ibb.co/DVrsGtj/flutes.jpg" />
+          
+        </ion-col>
+
+        <ion-col size-xs=12 size-sm=12 size-md=6 size-lg=6 size-xl=6>
+
+          <ion-card-header>
+            <ion-card-subtitle>Destination</ion-card-subtitle>
+            <ion-card-title>Madison, WI</ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+            Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the Wisconsin Territory in 1836.
+          </ion-card-content>
+
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </ion-card>
+
+  <div #booksBanner class="reuserly-books-banner">
+    <div #booksLogo class="reuserly-books-banner__reuserly-logo">
+      <img class='reuserly-books-banner__reuserly-logo--image' src="https://i.ibb.co/18x47wV/reuserly-logo.png" alt="reuserly_logo">
+      <h1  class='reuserly-books-banner__reuserly-logo--subtitle'>BOOKS</h1>
+    </div>
+  </div>
+
+  <ion-card>
+
+    <ion-grid class='ion-no-padding'>
+      <ion-row >
+
+        <ion-col class='ion-no-padding' size-xs=12 size-sm=12 size-md=6 size-lg=6 size-xl=6>
+
+
+          <img src="https://i.ibb.co/qkNqY3C/dad.jpg" />
+          
+        </ion-col>
+
+        <ion-col size-xs=12 size-sm=12 size-md=6 size-lg=6 size-xl=6>
+
+          <ion-card-header>
+            <ion-card-subtitle>Destination</ion-card-subtitle>
+            <ion-card-title>Madison, WI</ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+            Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the Wisconsin Territory in 1836.
+          </ion-card-content>
+
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </ion-card>
+
+  <ion-footer  class='ion-padding'>
+    <ion-toolbar color='dark'>
+
+      <ion-title class='ion-text-center'></ion-title>
+     
+    </ion-toolbar>
+
+    <ion-fab horizontal="start" vertical="center" slot="fixed">
+      <ion-fab-button color="medium">
+        <ion-icon name="ios-arrow-dropright"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-list side="end">
+        <ion-item lines='none' color='dark'>
+          <ion-label>
+            <h1>Follow Reuserly at:</h1>
+          </ion-label>
+        </ion-item>
+        <ion-fab-button *ngFor="let s of socials"  [href]="s.link" target='_blank' color='medium' >
+          <ion-icon [name]='s.icon'></ion-icon>
+        </ion-fab-button>
+      </ion-fab-list>
+    </ion-fab>
+   
+  </ion-footer>
+ 
+  <!-- <div style='height:2000px'></div> -->
 </ion-content>
+

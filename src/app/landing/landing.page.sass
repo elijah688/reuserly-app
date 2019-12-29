@@ -2,10 +2,13 @@
 ion-header
     ion-buttons
         ion-menu-button
+            display: block
             ion-icon
                 border: 1px solid black
                 height: 15vh
         ion-button
+            font-size: 1.3rem
+            display: none
             border-radius: 50%
             height: 15vh
             --ripple-color: transparent
@@ -13,26 +16,110 @@ ion-header
             outline: none
             img
                 height: 15vh
+                outline: none
+
 ion-content
+    ion-card
+        ion-card-header
+            ion-card-subtitle
+                font-size: 2rem
+            ion-card-title
+                font-size: 2.5rem
+        ion-card-content
+            font-size: 1.5rem
+            ion-toolbar
+                ion-buttons
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    ion-button
+                        font-size: 1.5rem
     .banner
-        img
-            // object-fit: cover    
-            width: 100%
-            height: 60vh
-        h1
+        position: relative
+        background: url(https://i.ibb.co/kMW3Pds/water.jpg)
+        background-attachment: fixed
+        background-position: center
+        background-size: cover
+        background-repeat: no-repeat
+        width: 100%
+        height: 60vh
+        display: flex
+        justify-content: center
+        align-items: center
+        h1  
+            width: 80%
+            font-size: 2.5rem
+            text-align: center
+            color: white
             margin: 0
             padding: 0
             transition: all 2s ease-out
-        // .visible
-        //     color: red
-        //     text-align: center
-        //     border: 1px solid red
-        //     transform: translateY(0%)
-        //     opacity: 0
+        .backdrop
+            position: absolute
+            height: 100%
+            width: 100%
+            background-color: black
+            opacity: 0
+           
 
-        // .hidden
-        //     color: green
-        //     text-align: center
-        //     border: 1px solid red
-        //     opacity: 1
-        //     transform: translateY(-500%)
+    .reuserly-books-banner
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        background: url('https://i.ibb.co/5BQ9hSq/books.jpg')
+        background-attachment: fixed
+        background-position: center
+        background-size: cover
+        background-repeat: no-repeat
+        height: 60vh
+        transition: all 2s ease-out
+        .reuserly-books-banner__reuserly-logo
+            height: 80%
+            width: 40%
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: center
+            .reuserly-books-banner__reuserly-logo--image
+                background-color: white
+                border-radius: 50%
+                height: 40%
+
+            .reuserly-books-banner__reuserly-logo--subtitle
+                color: white
+                border-top: 2px solid white
+                border-bottom: 2px solid white
+                font-size: 2.5rem
+
+ion-footer
+    background-color: var(--ion-color-dark)
+    // ion-toolbar
+    // overflow: hidden
+    ion-fab
+        ion-fab-list
+            ion-item 
+                ion-label
+                    h1
+                        display: none
+
+.protector-row
+    display: flex
+    flex-direction: column-reverse
+
+@media only screen and (min-width: 720px)
+    ion-header
+        ion-buttons
+            ion-menu-button
+                display: none
+            ion-button
+                display: block
+    .protector-row
+        flex-direction: row
+    ion-footer
+        ion-fab
+            ion-fab-list
+                ion-item 
+                    ion-label
+                        h1
+                            display: block
