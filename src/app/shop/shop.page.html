@@ -4,19 +4,21 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content 
+  [scrollEvents]="true"
+  (ionScroll)='logScroll($event)'>
   <ion-grid>
-    <ion-row>
-      <ion-col>
-        <div class="straws">
-          <h1>
-            <b>STRAWS</b>
+    <ion-row *ngFor="let p of products">
+      <ion-col size=6>
+        <div #sideImage class="side-image">
+          <h1 #sideImageTitle>
+            <b >STRAWS</b>
           </h1>
         </div>        
       </ion-col>
       
-      <ion-col>
-        <ion-card *ngFor="let p of products">
+      <ion-col size=6>
+        <ion-card >
 
           <ion-card-header>
             <ion-card-title class='ion-padding ion-text-center'>{{p.title | uppercase}}</ion-card-title>
