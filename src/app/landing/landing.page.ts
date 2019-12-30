@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, AfterViewChecked, ElementRef, ViewChildren, QueryList, AfterContentInit, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { __core_private_testing_placeholder__ } from '@angular/core/testing';
+import { links, StoreLink, SocialLink } from '../shared/links/links';
 
 @Component({
   selector: 'app-landing',
@@ -7,52 +8,54 @@ import { __core_private_testing_placeholder__ } from '@angular/core/testing';
   styleUrls: ['./landing.page.sass'],
 })
 export class LandingPage implements OnInit, AfterViewChecked, AfterViewInit {
-  stores = [
-    {
-      'title': 'Straws',
-      'icon': 'color-wand',
-      'link' : '/straws',
-      'color': '#E63135'
-    },
-    {
-      'title': 'Protectors',
-      'icon': 'phone-portrait',
-      'link' : '/protectors',
-      'color': '#0CA9EA'
-    },
-    {
-      'title': 'Flutes',
-      'icon': 'wine',
-      'link' : '/flutes',
-      'color': '#b76e79'
-    },
-    {
-      'title': 'Reuserly Books',
-      'icon': 'book',
-      'link' : '/books',
-      'color': '#F46529'
-    },
-  ];
+  // stores = [
+  //   {
+  //     'title': 'Straws',
+  //     'icon': 'color-wand',
+  //     'link' : '/straws',
+  //     'color': '#E63135'
+  //   },
+  //   {
+  //     'title': 'Protectors',
+  //     'icon': 'phone-portrait',
+  //     'link' : '/protectors',
+  //     'color': '#0CA9EA'
+  //   },
+  //   {
+  //     'title': 'Flutes',
+  //     'icon': 'wine',
+  //     'link' : '/flutes',
+  //     'color': '#b76e79'
+  //   },
+  //   {
+  //     'title': 'Reuserly Books',
+  //     'icon': 'book',
+  //     'link' : '/books',
+  //     'color': '#F46529'
+  //   },
+  // ];
 
-  socials = [
-    {
-      'icon': 'logo-twitter',
-      'link' : 'https://mobile.twitter.com/reuserly',
-    },
-    {
-      'icon': 'logo-instagram',
-      'link' : 'https://www.instagram.com/reuserly/?hl=en',
-    },
-    {
-      'icon': 'logo-facebook',
-      'link' : 'https://www.facebook.com/Reuserly/',
-    },
-    {
-      'icon': 'cart',
-      'link' : 'https://www.amazon.co.uk/s?i=merchant-items&me=AXZZLUOFE5VAI&dc&qid=1577594775&ref=sr_nr_p_4_1',
-    },
-  ];
+  // socials = [
+  //   {
+  //     'icon': 'logo-twitter',
+  //     'link' : 'https://mobile.twitter.com/reuserly',
+  //   },
+  //   {
+  //     'icon': 'logo-instagram',
+  //     'link' : 'https://www.instagram.com/reuserly/?hl=en',
+  //   },
+  //   {
+  //     'icon': 'logo-facebook',
+  //     'link' : 'https://www.facebook.com/Reuserly/',
+  //   },
+  //   {
+  //     'icon': 'cart',
+  //     'link' : 'https://www.amazon.co.uk/s?i=merchant-items&me=AXZZLUOFE5VAI&dc&qid=1577594775&ref=sr_nr_p_4_1',
+  //   },
+  // ];
 
+  stores:StoreLink[] = links.stores
+  socials:SocialLink[] = links.socials
 
   @ViewChild('bannerTitle', {static:false}) bannerTitle:ElementRef
   @ViewChild('backdrop', {static:false}) backdrop:ElementRef 
@@ -97,7 +100,6 @@ export class LandingPage implements OnInit, AfterViewChecked, AfterViewInit {
     this.handleCardAnimations();
     
     this.cdr.detectChanges();
-
 
   }
 

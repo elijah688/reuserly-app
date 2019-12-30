@@ -5,13 +5,13 @@
 
       </ion-menu-button>
       <ion-button fill='clear'>
-        <img [routerLink]="['/landing']" routerLinkActive="router-link-active" routerDirection='forward' 
+        <img [routerLink]="['/landing']" routerLinkActive="router-link-active" routerDirection='root' 
           src="https://i.ibb.co/18x47wV/reuserly-logo.png" alt="reuserly_logo">
       </ion-button>
     </ion-buttons>
     <!-- <ion-title class='ion-text-center'>landing</ion-title> -->
     <ion-buttons  slot="end">
-      <ion-button size='large' fill='clear' [routerLink]="[s.link]" routerLinkActive="active-link" routerDirection='forward' [style.color]='s.color' *ngFor="let s of stores">
+      <ion-button size='large' fill='clear' [routerLink]="[s.link]" routerLinkActive="router-link-active" routerDirection='root' [style.color]='s.color' *ngFor="let s of stores">
         <ion-icon [name]='s.icon'></ion-icon>
         <ion-label>{{s.title}}</ion-label>
       </ion-button>
@@ -56,14 +56,14 @@
 
             Set of 2 Stainless Steel Straws, aluminium case, 2 silicon tips and cleaning brush. The metal case is made from recycled aluminium and can hold up to 6 straws plus the cleaning brush.
         
+            <div class='card-button__container'>
+              <ion-button [routerLink]="['/straws']" routerDirection="forward" size='large'>
+                <ion-icon name='ios-color-wand'></ion-icon>
+                <ion-label>Straws</ion-label>
+              </ion-button>
+            </div>
           </ion-card-content>
 
-          <div class='card-button__container'>
-            <ion-button size='large'>
-              <ion-icon name='ios-color-wand'></ion-icon>
-              <ion-label>Protectors</ion-label>
-            </ion-button>
-          </div>
 
         </ion-col>
       </ion-row>
@@ -85,14 +85,15 @@
 
           <ion-card-content>
             Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the Wisconsin Territory in 1836.
+         
+            <div class='card-button__container'>
+              <ion-button [routerLink]="['/protectors']" routerDirection="forward" size='large'>
+                <ion-icon name='ios-phone-portrait'></ion-icon>
+                <ion-label>Protectors</ion-label>
+              </ion-button>
+            </div>
+         
           </ion-card-content>
-
-          <div class='card-button__container'>
-            <ion-button size='large'>
-              <ion-icon name='ios-phone-portrait'></ion-icon>
-              <ion-label>Protectors</ion-label>
-            </ion-button>
-          </div>
 
         </ion-col>
         
@@ -102,6 +103,7 @@
           <img #protectorCardImage src="https://i.ibb.co/HDk1hQn/iphone.jpg" />
 
         </ion-col>
+
       </ion-row>
     </ion-grid>
 
@@ -126,16 +128,18 @@
           </ion-card-header>
 
           <ion-card-content>
+            
             Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the Wisconsin Territory in 1836.
+            
+            <div class='card-button__container'>
+              <ion-button [routerLink]="['/flutes']" routerDirection="forward" size='large'>
+                <ion-icon name='ios-wine'></ion-icon>
+                <ion-label>FLUTES</ion-label>
+              </ion-button>
+            </div>
+  
           </ion-card-content>
-
-          <div class='card-button__container'>
-            <ion-button size='large'>
-              <ion-icon name='ios-wine'></ion-icon>
-              <ion-label>FLUTES</ion-label>
-            </ion-button>
-          </div>
-
+         
         </ion-col>
       </ion-row>
     </ion-grid>
@@ -163,15 +167,16 @@
 
           <ion-card-content>
             Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the Wisconsin Territory in 1836.
+         
+            <div class='card-button__container'>
+              <ion-button [routerLink]="['/books']" routerDirection="forward" size='large'>
+                <ion-icon name='book'></ion-icon>
+                <ion-label>Books</ion-label>
+              </ion-button>
+            </div>
+
           </ion-card-content>
 
-          <div class='card-button__container'>
-            <ion-button size='large'>
-              <ion-icon name='ios-color-wand'></ion-icon>
-              <ion-label>Protectors</ion-label>
-            </ion-button>
-          </div>
-          
         </ion-col>
 
         <ion-col class='ion-no-padding' size-xs=12 size-sm=12 size-md=6 size-lg=6 size-xl=6>

@@ -1,11 +1,21 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot='start'>
-      <ion-menu-button color='dark'>
-  
+      <ion-menu-button color="dark">
+
       </ion-menu-button>
+      <ion-button fill='clear'>
+        <img [routerLink]="['/landing']" routerLinkActive="router-link-active" routerDirection='root' 
+          src="https://i.ibb.co/18x47wV/reuserly-logo.png" alt="reuserly_logo">
+      </ion-button>
     </ion-buttons>
-    <ion-title class='ion-text-center'>STRAWS</ion-title>
+
+    <ion-buttons  slot="end">
+      <ion-button size='large' fill='clear' [routerLink]="[s.link]" routerLinkActive="router-link-active" routerDirection='root' [style.color]='s.color' *ngFor="let s of stores">
+        <ion-icon [name]='s.icon'></ion-icon>
+        <ion-label>{{s.title}}</ion-label>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -17,28 +27,28 @@
 
       <ion-row >
 
-        <ion-col class='description-col' size=6>
-          <ion-card-header>
-            <ion-card-title class='ion-padding ion-text-center'>{{s.title | uppercase}}</ion-card-title>
+        <ion-col class='description-col' size-xs=12 size-sm=12 size-md=6 size-lg=6 size-xl=6>
+
+          <h1 class='ion-margin-vertical'>{{s.title | uppercase}}</h1>
+
+          <ion-list>
             
-            <ion-list>
-              <ion-item *ngFor="let d of s.description"> 
-                <ion-icon name="checkmark" slot="start"></ion-icon>
-                <ion-label class='ion-text-wrap'>
-                  {{d}}
-                </ion-label>
-              </ion-item>
-            </ion-list>
+            <ion-item *ngFor="let d of s.description"> 
+              <ion-icon name="checkmark" slot="start"></ion-icon>
+              <ion-label class='ion-text-wrap'>
+                {{d}}
+              </ion-label>
+            </ion-item>
 
-          </ion-card-header>
+          </ion-list>
 
-        </ion-col>
+        </ion-col >
 
-        <ion-col size=6>
+        <ion-col class='ion-padding selection-col' size-xs=12 size-sm=12 size-md=6 size-lg=6 size-xl=6>
+         
+          <ion-card-content class='ion-no-padding'>
 
-          <ion-card-content>
-
-            <ion-slides magrin-top #slides pager="false" scrollbar='false' [options]="slideOpts">
+            <ion-slides #slides class='ion-magrin-top' pager="false" scrollbar='false' [options]="slideOpts">
              
               <ion-slide *ngFor="let c of s.colors">
 
@@ -46,17 +56,27 @@
                 
                 <h1 class='ion-padding-top' [ngClass]="c.value">{{ c.value | uppercase}}</h1>
 
-                <ion-card-subtitle [ngStyle]='{color: (c.price===0.00) ? "red" : "var(--ion-color-medium)" }' class='ion-padding'>{{c.price | outOfStock}}</ion-card-subtitle>
+                <h1 [ngStyle]='{color: (c.price===0.00) ? "red" : "var(--ion-color-medium)" }' class='ion-padding'>{{c.price | outOfStock}}</h1>
 
               </ion-slide>
             </ion-slides>
 
-            <ion-buttons magrin-top>
-              <ion-button fill="clear" *ngFor="let c of s.colors; let i = index" [ngClass]="hasNumber(c.value)===true ? 'uncolored-product-button' : c.value" (click)='slides.slideTo(i)'>
+            <ion-buttons class="ion-magrin-top">
+              <ion-button fill="clear" *ngFor="let c of s.colors; let i = index" [ngClass]="hasNumber(c.value)===true ? 'uncolored-product-button' : c.value" (click)='slides.slideTo(i); setCurrentColor(c);'>
                 {{c.value}}
               </ion-button>
             </ion-buttons>
+
+            <div class="ion-margin-vertical buy-button__container">
+              <ion-button [disabled]='currentColor.price===0.00' [href]='currentColor.buy_link' target='_blank' size='large' fill='solid'>
+                <ion-label>BUY</ion-label>
+                <ion-icon name=cart></ion-icon>
+              </ion-button>
+            </div>
+
           </ion-card-content>
+
+          
 
         </ion-col>
       </ion-row>

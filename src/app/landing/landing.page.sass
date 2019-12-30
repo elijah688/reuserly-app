@@ -11,15 +11,16 @@ ion-header
             display: none
             border-radius: 50%
             height: 15vh
-            // --ripple-color: transparent
-            // --background-hover: transparent
-            // outline: none
             img
                 height: 10vh
                 outline: none
 
 ion-content
     ion-card
+        img
+            object-fit: cover
+            height: 100%
+            object-position: 50% 50%
         ion-card-header
             ion-card-subtitle
                 font-size: 2rem
@@ -27,22 +28,25 @@ ion-content
                 font-size: 2.5rem
         ion-card-content
             font-size: 1.5rem
-            ion-toolbar
-                ion-buttons
-                    display: flex
-                    justify-content: center
-                    align-items: center
-                    ion-button
-                        font-size: 1.5rem
-
-   
-
+            .card-button__container
+                display: flex
+                justify-content: center
+                align-items: center
+                margin: 2rem 0
+                ion-button
+                    outline: none
+                    --border-radius: 50px
+                    font-size: 1.5rem
+                    transition: transform 0.2s ease-out
+                    &:hover
+                        transform: translateY(-0.5rem)
+    
     .straw-card
         transform: translateX(-100%)
         transition: all 1s ease-out
         
         ion-col
-            background-color: #C7E351
+            background-color: rgba(#C7E351,0.7)
             ion-card-header
                 ion-card-subtitle
                     color: #D1536B
@@ -50,104 +54,75 @@ ion-content
                     color: #D5572E
             ion-card-content
                 color: #ED8E22
-            .card-button__container
-                display: flex
-                justify-content: center
-                align-content: center
-                margin: 0 0 2rem 0
-                ion-button
-                    --border-radius: 50px
-                    --color: #ffde23
-                    --background-hover: #D1536B
-                    --border-color: #D5572E
-                    --background: #D5572E
-                    transition: transform 0.2s ease-out
-                    &:hover
-                        transform: translateY(-0.5rem)
+                .card-button__container
+                    ion-button
+                        --color: #ffde23
+                        --color-hover: #EFEFED
+                        --background-hover: #D1536B
+                        --border-color: #D5572E
+                        --background: #D5572E
    
     .protector-card
         transform: translateX(100%)
         transition: all 1s ease-out
         ion-col
-            background-color: #A49887
+            background-color: rgba(#A49887,0.7)
             ion-card-header
                 ion-card-subtitle
-                    color: #DDDCE4
+                    color: var(--ion-color-light)
                 ion-card-title
                     color: #24282B
             ion-card-content
                 color: #2E271D
-            .card-button__container
-                display: flex
-                justify-content: center
-                align-content: center
-                margin: 0 0 2rem 0
-                ion-button
-                    --border-radius: 50px
-                    --color: #DDDCE4
-                    --background-hover: #DDDCE4
-                    --color-hover: #2E271D
-                    --border-color: #24282B
-                    --background: #24282B
-                    transition: transform 0.2s ease-out
-                    &:hover
-                        transform: translateY(-0.5rem)
+                .card-button__container
+                    ion-button
+                        --color: #DDDCE4
+                        --background-hover: #DDDCE4
+                        --color-hover: #2E271D
+                        --border-color: #24282B
+                        --background: #24282B
     
     .flute-card
         transform: translateX(-100%)
         transition: all 1s ease-out
         
         ion-col
-            background-color: #C7E351
+            background-color: rgba(#CAAAAD,0.7)
             ion-card-header
                 ion-card-subtitle
                     color: #D1536B
                 ion-card-title
-                    color: #D5572E
+                    color: #EFEFED
             ion-card-content
-                color: #ED8E22
-            .card-button__container
-                display: flex
-                justify-content: center
-                align-content: center
-                margin: 0 0 2rem 0
-                ion-button
-                    --border-radius: 50px
-                    --color: #ffde23
-                    --background-hover: #D1536B
-                    --border-color: #D5572E
-                    --background: #D5572E
-                    transition: transform 0.2s ease-out
-                    &:hover
-                        transform: translateY(-0.5rem)
+                color: #747C66
+                .card-button__container
+                    ion-button
+                        --color: #DDDEE2
+                        --color-hover: #EFEFED
+                        --background-hover: #D1536B
+                        --border-color: #D68F66
+                        --background: #D68F66
     
     .book-card
         transform: translateX(100%)
         transition: all 1s ease-out
         ion-col
-            background-color: #A49887
+            background-color: rgba(#8AA7AE,0.7)
             ion-card-header
                 ion-card-subtitle
                     color: #DDDCE4
                 ion-card-title
                     color: #24282B
             ion-card-content
-                color: #2E271D
-            .card-button__container
-                display: flex
-                justify-content: center
-                align-content: center
-                margin: 0 0 2rem 0
-            ion-button
-                --border-radius: 50px
-                --color: #DDDCE4
-                --background-hover: #DDDCE4
-                --color-hover: #2E271D
-                --border-color: #24282B
-                --background: #24282B
-                transition: transform 0.2s ease-out
-                &:hover
-                    transform: translateY(-0.5rem)
+                color: #333740
+                .card-button__container
+                    ion-button
+                        --border-radius: 50px
+                        --color: #DDDCE4
+                        --background-hover: #DDDCE4
+                        --color-hover: #333740
+                        --border-color: #333740
+                        --background: #333740
 
     .card-visible
         transform: translateX(0%)                       
@@ -164,7 +139,9 @@ ion-content
         display: flex
         justify-content: center
         align-items: center
+        overflow: hidden
         h1  
+            text-shadow: 1px 1px 2px #5F231B, 0 0 1em #004D84, 0 0 0.2em #5BA7C1
             width: 80%
             font-size: 2.5rem
             text-align: center
