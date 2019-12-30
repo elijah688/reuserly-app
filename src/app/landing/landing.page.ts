@@ -1,11 +1,12 @@
-import { Component, OnInit, ViewChild, AfterViewChecked, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewChecked, ElementRef, ViewChildren, QueryList, AfterContentInit, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { __core_private_testing_placeholder__ } from '@angular/core/testing';
+
 @Component({
   selector: 'app-landing',
   templateUrl: './landing.page.html',
   styleUrls: ['./landing.page.sass'],
 })
-export class LandingPage implements OnInit, AfterViewChecked {
+export class LandingPage implements OnInit, AfterViewChecked, AfterViewInit {
   stores = [
     {
       'title': 'Straws',
@@ -57,24 +58,67 @@ export class LandingPage implements OnInit, AfterViewChecked {
   @ViewChild('backdrop', {static:false}) backdrop:ElementRef 
 
 
-  @ViewChild('booksBanner', {static:false}) booksBanner:ElementRef
-  @ViewChild('booksLogo', {static:false}) booksLogo:ElementRef 
+  @ViewChild('protectorCardImage', {static:false}) protectorCardImage:ElementRef
+  protectorCardVisible:boolean = false; 
 
+
+  @ViewChild('fluteCardImage', {static:false}) fluteCardImage:ElementRef
+  fluteCardVisible:boolean = false; 
+
+  @ViewChild('reuserlyBooksBanner', {static:false}) reuserlyBooksBanner:ElementRef
+  bookCardVisible:boolean = false; 
+  
+
+  
   isTitleVisible:boolean;
   scrollTop:number;
+  strawCardVisible:boolean = false;
 
-  constructor() { }
+
+  constructor(private cdr: ChangeDetectorRef) { }
   
 
   ngOnInit() {
+    setTimeout(() => {
+      this.strawCardVisible = true;
+    }, 500);
+
   }
 
+  ngAfterViewInit(): void {
+   
+
+  }
 
   ngAfterViewChecked(): void {
     this.bannerTitle.nativeElement.style.transform = `translateY(${this.scrollTop/5}%)`
     this.backdrop.nativeElement.style.opacity = `${this.scrollTop/5}%`
+
+    this.handleCardAnimations();
+    
+    this.cdr.detectChanges();
+
+
   }
 
+  private handleCardAnimations():void{
+    const protectorCardOffset:number = this.protectorCardImage.nativeElement.getBoundingClientRect().top; 
+    if(protectorCardOffset!==0 && protectorCardOffset<725){
+      this.protectorCardVisible = true;
+    }
+
+
+    const fluteCardOffset:number = this.fluteCardImage.nativeElement.getBoundingClientRect().top; 
+    if(fluteCardOffset!==0 && fluteCardOffset<800){
+      this.fluteCardVisible = true;
+    }
+
+    const reuserlyBooksBannerOffset:number = this.reuserlyBooksBanner.nativeElement.getBoundingClientRect().top; 
+    if(reuserlyBooksBannerOffset!==0 && reuserlyBooksBannerOffset<250){
+      this.bookCardVisible = true;
+    }
+
+  }
 
   logScroll(event:CustomEvent){
     this.scrollTop = event.detail.scrollTop;

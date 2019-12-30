@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChildren, QueryList, ElementRef } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { ShopService } from '../shop.service';
+import { ShopService } from '../shared/services/shop.service';
 import { Straw } from './straw.model';
 
 @Component({

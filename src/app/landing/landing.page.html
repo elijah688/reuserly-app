@@ -10,8 +10,8 @@
       </ion-button>
     </ion-buttons>
     <!-- <ion-title class='ion-text-center'>landing</ion-title> -->
-    <ion-buttons slot="end">
-      <ion-button [routerLink]="[s.link]" routerLinkActive="active" routerDirection='forward' [style.color]='s.color' *ngFor="let s of stores">
+    <ion-buttons  slot="end">
+      <ion-button size='large' fill='clear' [routerLink]="[s.link]" routerLinkActive="active-link" routerDirection='forward' [style.color]='s.color' *ngFor="let s of stores">
         <ion-icon [name]='s.icon'></ion-icon>
         <ion-label>{{s.title}}</ion-label>
       </ion-button>
@@ -34,7 +34,7 @@
     </h1>   
   </div>
 
-  <ion-card class='straw-card'>
+  <ion-card  [ngClass]='{"card-visible" : strawCardVisible}' class='straw-card'>
 
     <ion-grid class='ion-no-padding'>
       <ion-row >
@@ -42,7 +42,7 @@
         <ion-col class='ion-no-padding' size-xs=12 size-sm=12 size-md=6 size-lg=6 size-xl=6>
 
           <img src="https://i.ibb.co/KDyRyrz/straws.jpg" />
-          
+
         </ion-col>
 
         <ion-col size-xs=12 size-sm=12 size-md=6 size-lg=6 size-xl=6>
@@ -53,16 +53,17 @@
           </ion-card-header>
 
           <ion-card-content>
+
             Set of 2 Stainless Steel Straws, aluminium case, 2 silicon tips and cleaning brush. The metal case is made from recycled aluminium and can hold up to 6 straws plus the cleaning brush.
-            <ion-toolbar>
-              <ion-buttons>
-                <ion-button size='large' fill='solid'>
-                  <ion-icon name='color-wand'></ion-icon>
-                  <ion-label>STRAWS</ion-label>
-                </ion-button>
-              </ion-buttons>
-            </ion-toolbar>
+        
           </ion-card-content>
+
+          <div class='card-button__container'>
+            <ion-button size='large'>
+              <ion-icon name='ios-color-wand'></ion-icon>
+              <ion-label>Protectors</ion-label>
+            </ion-button>
+          </div>
 
         </ion-col>
       </ion-row>
@@ -70,10 +71,10 @@
   
   </ion-card>
 
-  <ion-card class='protector-card'>
+  <ion-card [ngClass]='{"card-visible" : protectorCardVisible}' class='protector-card'>
 
     <ion-grid class='ion-no-padding'>
-      <ion-row class='protector-row'>
+      <ion-row class='reverse-row'>
 
         <ion-col  size-xs=12 size-sm=12 size-md=6 size-lg=6 size-xl=6>
 
@@ -84,21 +85,21 @@
 
           <ion-card-content>
             Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the Wisconsin Territory in 1836.
-            <ion-toolbar>
-              <ion-buttons>
-                <ion-button size='large' fill='solid'>
-                  <ion-icon name='phone-portrait'></ion-icon>
-                  <ion-label>Protectors</ion-label>
-                </ion-button>
-              </ion-buttons>
-            </ion-toolbar>
           </ion-card-content>
 
+          <div class='card-button__container'>
+            <ion-button size='large'>
+              <ion-icon name='ios-phone-portrait'></ion-icon>
+              <ion-label>Protectors</ion-label>
+            </ion-button>
+          </div>
+
         </ion-col>
+        
 
         <ion-col class='ion-no-padding' size-xs=12 size-sm=12 size-md=6 size-lg=6 size-xl=6>
 
-          <img src="https://i.ibb.co/HDk1hQn/iphone.jpg" />
+          <img #protectorCardImage src="https://i.ibb.co/HDk1hQn/iphone.jpg" />
 
         </ion-col>
       </ion-row>
@@ -106,14 +107,14 @@
 
   </ion-card>
 
-  <ion-card>
+  <ion-card [ngClass]='{"card-visible" : fluteCardVisible}' class='flute-card'>
 
     <ion-grid class='ion-no-padding'>
-      <ion-row >
+      <ion-row>
 
         <ion-col class='ion-no-padding' size-xs=12 size-sm=12 size-md=6 size-lg=6 size-xl=6>
 
-          <img src="https://i.ibb.co/DVrsGtj/flutes.jpg" />
+          <img #fluteCardImage src="https://i.ibb.co/DVrsGtj/flutes.jpg" />
           
         </ion-col>
 
@@ -128,30 +129,30 @@
             Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the Wisconsin Territory in 1836.
           </ion-card-content>
 
+          <div class='card-button__container'>
+            <ion-button size='large'>
+              <ion-icon name='ios-wine'></ion-icon>
+              <ion-label>FLUTES</ion-label>
+            </ion-button>
+          </div>
+
         </ion-col>
       </ion-row>
     </ion-grid>
 
   </ion-card>
 
-  <div #booksBanner class="reuserly-books-banner">
-    <div #booksLogo class="reuserly-books-banner__reuserly-logo">
+  <div #reuserlyBooksBanner class="reuserly-books-banner">
+    <div class="reuserly-books-banner__reuserly-logo">
       <img class='reuserly-books-banner__reuserly-logo--image' src="https://i.ibb.co/18x47wV/reuserly-logo.png" alt="reuserly_logo">
-      <h1  class='reuserly-books-banner__reuserly-logo--subtitle'>BOOKS</h1>
+      <h1 class='reuserly-books-banner__reuserly-logo--subtitle'>BOOKS</h1>
     </div>
   </div>
 
-  <ion-card>
+  <ion-card [ngClass]='{"card-visible" : bookCardVisible}' class='book-card'>
 
     <ion-grid class='ion-no-padding'>
-      <ion-row >
-
-        <ion-col class='ion-no-padding' size-xs=12 size-sm=12 size-md=6 size-lg=6 size-xl=6>
-
-
-          <img src="https://i.ibb.co/qkNqY3C/dad.jpg" />
-          
-        </ion-col>
+      <ion-row class='reverse-row'>
 
         <ion-col size-xs=12 size-sm=12 size-md=6 size-lg=6 size-xl=6>
 
@@ -164,6 +165,19 @@
             Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the Wisconsin Territory in 1836.
           </ion-card-content>
 
+          <div class='card-button__container'>
+            <ion-button size='large'>
+              <ion-icon name='ios-color-wand'></ion-icon>
+              <ion-label>Protectors</ion-label>
+            </ion-button>
+          </div>
+          
+        </ion-col>
+
+        <ion-col class='ion-no-padding' size-xs=12 size-sm=12 size-md=6 size-lg=6 size-xl=6>
+
+          <img src="https://i.ibb.co/qkNqY3C/dad.jpg" />
+         
         </ion-col>
       </ion-row>
     </ion-grid>

@@ -11,9 +11,9 @@ ion-header
             display: none
             border-radius: 50%
             height: 15vh
-            --ripple-color: transparent
-            --background-hover: transparent
-            outline: none
+            // --ripple-color: transparent
+            // --background-hover: transparent
+            // outline: none
             img
                 height: 10vh
                 outline: none
@@ -35,7 +35,12 @@ ion-content
                     ion-button
                         font-size: 1.5rem
 
+   
+
     .straw-card
+        transform: translateX(-100%)
+        transition: all 1s ease-out
+        
         ion-col
             background-color: #C7E351
             ion-card-header
@@ -45,16 +50,24 @@ ion-content
                     color: #D5572E
             ion-card-content
                 color: #ED8E22
-                ion-toolbar
-                    --background: #C7E351
-                    ion-buttons
-                        ion-button
-                            --border-radius: 10px
-                            --color: #ffde23
-                            --background-hover: #D1536B
-                            --border-color: #D5572E
-                            --background: #D5572E
+            .card-button__container
+                display: flex
+                justify-content: center
+                align-content: center
+                margin: 0 0 2rem 0
+                ion-button
+                    --border-radius: 50px
+                    --color: #ffde23
+                    --background-hover: #D1536B
+                    --border-color: #D5572E
+                    --background: #D5572E
+                    transition: transform 0.2s ease-out
+                    &:hover
+                        transform: translateY(-0.5rem)
+   
     .protector-card
+        transform: translateX(100%)
+        transition: all 1s ease-out
         ion-col
             background-color: #A49887
             ion-card-header
@@ -64,17 +77,81 @@ ion-content
                     color: #24282B
             ion-card-content
                 color: #2E271D
-                ion-toolbar
-                    --background: #A49887
-                    ion-buttons
-                        ion-button
-                            --border-radius: 10px
-                            --color: #DDDCE4
-                            --background-hover: #DDDCE4
-                            --color-hover: #2E271D
-                            --border-color: #24282B
-                            --background: #24282B
-                            
+            .card-button__container
+                display: flex
+                justify-content: center
+                align-content: center
+                margin: 0 0 2rem 0
+                ion-button
+                    --border-radius: 50px
+                    --color: #DDDCE4
+                    --background-hover: #DDDCE4
+                    --color-hover: #2E271D
+                    --border-color: #24282B
+                    --background: #24282B
+                    transition: transform 0.2s ease-out
+                    &:hover
+                        transform: translateY(-0.5rem)
+    
+    .flute-card
+        transform: translateX(-100%)
+        transition: all 1s ease-out
+        
+        ion-col
+            background-color: #C7E351
+            ion-card-header
+                ion-card-subtitle
+                    color: #D1536B
+                ion-card-title
+                    color: #D5572E
+            ion-card-content
+                color: #ED8E22
+            .card-button__container
+                display: flex
+                justify-content: center
+                align-content: center
+                margin: 0 0 2rem 0
+                ion-button
+                    --border-radius: 50px
+                    --color: #ffde23
+                    --background-hover: #D1536B
+                    --border-color: #D5572E
+                    --background: #D5572E
+                    transition: transform 0.2s ease-out
+                    &:hover
+                        transform: translateY(-0.5rem)
+    
+    .book-card
+        transform: translateX(100%)
+        transition: all 1s ease-out
+        ion-col
+            background-color: #A49887
+            ion-card-header
+                ion-card-subtitle
+                    color: #DDDCE4
+                ion-card-title
+                    color: #24282B
+            ion-card-content
+                color: #2E271D
+            .card-button__container
+                display: flex
+                justify-content: center
+                align-content: center
+                margin: 0 0 2rem 0
+            ion-button
+                --border-radius: 50px
+                --color: #DDDCE4
+                --background-hover: #DDDCE4
+                --color-hover: #2E271D
+                --border-color: #24282B
+                --background: #24282B
+                transition: transform 0.2s ease-out
+                &:hover
+                    transform: translateY(-0.5rem)
+
+    .card-visible
+        transform: translateX(0%)                       
+    
     .banner
         position: relative
         background: url(https://i.ibb.co/kMW3Pds/water.jpg)
@@ -102,7 +179,6 @@ ion-content
             background-color: black
             opacity: 0
            
-
     .reuserly-books-banner
         display: flex
         flex-direction: column
@@ -138,8 +214,8 @@ ion-footer
     // ion-toolbar
     // overflow: hidden
     ion-fab
-        ion-fab-button
-            ion-icon
+        // ion-fab-button
+        //     ion-icon
 
         ion-fab-list
             ion-item 
@@ -147,7 +223,7 @@ ion-footer
                     h1
                         display: none
 
-.protector-row
+.reverse-row
     display: flex
     flex-direction: column-reverse
 
@@ -158,7 +234,7 @@ ion-footer
                 display: none
             ion-button
                 display: block
-    .protector-row
+    .reverse-row
         flex-direction: row
     ion-footer
         ion-fab
@@ -167,3 +243,4 @@ ion-footer
                     ion-label
                         h1
                             display: block
+    

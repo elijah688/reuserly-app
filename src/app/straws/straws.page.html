@@ -46,7 +46,7 @@
                 
                 <h1 class='ion-padding-top' [ngClass]="c.value">{{ c.value | uppercase}}</h1>
 
-                <ion-card-subtitle class='ion-padding'>£{{c.price}}</ion-card-subtitle>
+                <ion-card-subtitle [ngStyle]='{color: (c.price===0.00) ? "red" : "var(--ion-color-medium)" }' class='ion-padding'>{{c.price | outOfStock}}</ion-card-subtitle>
 
               </ion-slide>
             </ion-slides>

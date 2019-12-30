@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { Straw } from './straws/straw.model';
+import { Straw } from '../../straws/straw.model';
 import { Subject, Observable } from 'rxjs';
-import { Flute } from './flutes/flute.model';
+import { Flute } from '../../flutes/flute.model';
 
 @Injectable({
   providedIn: 'root'

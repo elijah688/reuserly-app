@@ -1,4 +1,4 @@
-import { Color } from '../color.model';
+import { Color } from '../shared/models/color.model';
 
 export interface Straw{
     id:string,
