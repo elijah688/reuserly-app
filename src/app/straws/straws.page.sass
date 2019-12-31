@@ -19,13 +19,22 @@ ion-card
             display: flex
             flex-direction: column
             align-items: center
-            justify-content: center
+            justify-content: center   
             background: #D8EA85
             h1
                 text-align: center
-            ion-list, ion-item
-                --background: #D8EA85
+                color: #ED8E22
+            ion-list
+                --background-color: #D8EA85
                 background-color: #D8EA85
+                ion-item
+                    --border-color: rgba(236,144,35, 0.5)
+                    --background: #D8EA85
+                    ion-label
+                        --color: #D1536B
+                        font-size: 1.3rem
+                    ion-icon
+                        color: #D5572E
                
         .selection-col
             display: flex
@@ -75,6 +84,8 @@ ion-card
                         flex-direction: column
                         align-items: center
                         justify-content: center
+                        .item-color, .item-price
+                            font-size: 2rem
                         img
                             object-fit: cover
                             object-position: 50% 50%
@@ -88,8 +99,6 @@ ion-card
                     align-items: center
                     flex-wrap: wrap
                     ion-button
-                        color: transparent
-                        --color: transparent
                         border-radius: 50%
                         --border-radius: 50%
                         height: 6vh
@@ -118,9 +127,22 @@ ion-card
                     align-items: center
                     ion-button
                         --border-radius: 50px
+                        --color: #ffde23
+                        --color-hover: #EFEFED
+                        --background-hover: #D1536B
+                        --border-color: #D5572E
+                        --background: #D5572E
+                        outline: none
+                        --border-radius: 50px
+                        font-size: 1.5rem
+                        transition: transform 0.2s ease-out
+                        &:hover
+                            transform: translateY(-0.5rem)
 
 
-@media only screen and (min-width: 540px)
+
+//Pre Phone Screen
+@media only screen and (min-width: 500px) and (max-width: 850px)
     ion-card
         ion-grid
             ion-row
@@ -129,8 +151,12 @@ ion-card
                         ion-slides
                             ion-slide
                                 img
-                                    height: 45vh
-                                    width: 45vh
+                                    height: 70vw
+                                    width: 70vw
+
+
+
+
 @media only screen and (min-width: 720px)
     ion-header
         ion-buttons
@@ -138,7 +164,66 @@ ion-card
                 display: none
             ion-button
                 display: block
+                
 
+
+
+
+// IPAD
+@media only screen and (min-width: 768px) and (orientation: portrait)
+    ion-card
+        ion-grid
+            ion-row
+                .description-col
+                    padding: 0
+                    ion-list, ion-item
+                        padding: 0
+                .selection-col
+                    ion-card-content
+                        ion-slides
+                            ion-slide
+                                img
+                                    height: 45vw
+                                    width: 45vw
+                        ion-buttons
+                            ion-button
+                                height: 5vh
+                                width: 5vh
+
+
+
+
+                                    
+// IPAD PRO LANDSCAPE
+@media only screen and (min-width: 1360px) and (max-height: 1050px)
+    ion-card
+        ion-grid
+            ion-row
+                .selection-col
+                    ion-card-content
+                        ion-slides
+                            ion-slide
+                                img
+                                    height: 45vw
+                                    width: 45vw
+                 
+
+
+//PHONE PORTRAIT
+@media only screen and (max-width: 414px) and (orientation: portrait)
+    ion-card
+        ion-grid
+            ion-row
+                .description-col
+                    padding: 0
+                    ion-list
+                        padding: 0
+
+
+
+
+// FULL SCREEN
+@media only screen and (min-width: 768px) and (max-height: 1000px)
     ion-card
         ion-grid
             ion-row
@@ -149,3 +234,23 @@ ion-card
                                 img
                                     height: 45vh
                                     width: 45vh
+
+
+
+//PHONE LANDSCAPE
+@media only screen and (max-height: 414px) and (orientation: landscape)
+    ion-card
+        ion-grid
+            ion-row
+                .selection-col
+                    ion-card-content
+                        ion-slides
+                            color: red
+                            ion-slide
+                                img
+                                    height: 40vw
+                                    width: 40vw
+                        ion-buttons
+                            ion-button
+                                height: 12vh
+                                width: 12vh
