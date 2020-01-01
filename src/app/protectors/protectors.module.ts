@@ -7,12 +7,14 @@ import { IonicModule } from '@ionic/angular';
 import { ProtectorsPageRoutingModule } from './protectors-routing.module';
 
 import { ProtectorsPage } from './protectors.page';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    SharedModule,
     ProtectorsPageRoutingModule
   ],
   declarations: [ProtectorsPage]
