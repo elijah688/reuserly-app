@@ -1,24 +1,23 @@
 ion-card
     ion-row
         .description-col
-            background-color: #DAC4C5
+            background-color: #ADC1C7
             justify-content: space-around 
 
             ion-list
+                --background-color: #ADC1C7
+                background-color: #ADC1C7
                 h1
-                    color: #D1536B
-
-                --background-color: #DAC4C5
-                background-color: #DAC4C5
+                    color: #24282B
                 ion-item
                     display: flex
                     justify-content: center
                     align-items: center
-                    background-color: #DAC4C5
-                    --background: #DAC4C5
+                    background-color: #ADC1C7
+                    --background: #ADC1C7
                     --border-color: rgba(116,124,102, 0.4)
                     ion-label
-                        --color:#D1536B
+                        --color:#333740
                     ion-icon
                         color: #747C66
 
@@ -27,11 +26,12 @@ ion-card
                 justify-content: center
                 align-items: center
                 ion-button
-                    --color: #DDDEE2
-                    --color-hover: #EFEFED
-                    --background-hover: #D1536B
-                    --border-color: #D68F66
-                    --background: #D68F66
+                    --border-radius: 50px
+                    --color: #DDDCE4
+                    --background-hover: #DDDCE4
+                    --color-hover: #333740
+                    --border-color: #333740
+                    --background: #333740
                     outline: none
                     --border-radius: 50px
                     font-size: 1.1rem
@@ -52,9 +52,9 @@ ion-card
                     ion-item
                         --border-color: rgba(116,124,102, 0.4)
                         ion-label
-                            --color:#D1536B
+                            --color:#333740
                         ion-icon
-                            color: #747C66
+                            color: #333740
 
 
                 .description-col
@@ -92,10 +92,8 @@ ion-card
                         h1
                             font-size: 2rem
                         ion-item
-                            ion-label
-                                font-size: 1.5rem
-                            ion-icon
-                                font-size: 1.5rem
+                            .description
+                                font-size: 1.5rem 
 
 
                     .buy-button__container
@@ -108,6 +106,14 @@ ion-card
     ion-card
         ion-grid
             ion-row
+                .description-col
+                    ion-list
+                        h1
+                            font-size: 2rem
+                        ion-item
+                            ion-label
+                                font-size: 1.2rem
+
                 .selection-col
                     ion-card-content
                         img
@@ -147,7 +153,7 @@ ion-card
                             font-size: 2rem
                         ion-item
                             ion-label
-                                font-size: 1.2rem
+                                font-size: 1.5rem
                             
                     .buy-button__container
                         ion-button

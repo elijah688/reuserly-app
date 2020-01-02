@@ -16,8 +16,8 @@ export class BooksPage implements OnInit, OnDestroy {
   };
   
   private bookSub:Subscription = new Subscription();
-
   
+
   products:Book[];
   stores:StoreLink[] = links.stores
   socials:SocialLink[] = links.socials
@@ -28,8 +28,6 @@ export class BooksPage implements OnInit, OnDestroy {
     this.shopServ.getBooks()
     this.bookSub = this.shopServ.bookSubject.subscribe(books=>{
       this.products = books;
-      console.log(books)
-
     })
   }
 

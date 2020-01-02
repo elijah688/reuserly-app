@@ -3,7 +3,7 @@ export interface Book{
     description: string,
     author: string,
     image: string,
-    edition: string,
+    edition: number,
     year: Date,
     price: number,
     buy_link: string,

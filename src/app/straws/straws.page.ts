@@ -7,8 +7,8 @@ import { Color } from '../shared/models/color.model';
 
 @Component({
   selector: 'app-straws',
-  templateUrl: './straws.page.html',
-  styleUrls: ['./straws.page.sass'],
+  templateUrl: '../shared/product.template/product.html',
+  styleUrls: ['../shared/product.template/product.sass', './straws.page.sass']
 })
 export class StrawsPage implements OnInit {
   slideOpts = {
@@ -17,7 +17,7 @@ export class StrawsPage implements OnInit {
   };
   
   private strawsSub:Subscription = new Subscription();
-  straws:Straw[];
+  products:Straw[];
   stores:StoreLink[] = links.stores
   socials:SocialLink[] = links.socials
   currentColor:Color;
@@ -26,20 +26,14 @@ export class StrawsPage implements OnInit {
   ngOnInit():void {
     this.shopServ.getStraws();
     this.strawsSub = this.shopServ.strawSubject.subscribe(strwas=>{
-      this.straws = strwas;
-      this.currentColor = this.straws[0].colors[0];
-      console.log('current color is: ' + this.currentColor.value)
+      this.products = strwas;
+      this.currentColor = this.products[0].colors[0];
     })   
   }
 
   ngOnDestroy(): void {
     this.strawsSub.unsubscribe()
   }
-
-  hasNumber(color:string) {
-    return /\d/.test(color);
-  }
-
 
   setCurrentColor(c:Color){
     this.currentColor = c;
