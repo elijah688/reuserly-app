@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'books', pathMatch: 'full' },
   {
     path: 'landing',
     loadChildren: () => import('./landing/landing.module').then( m => m.LandingPageModule)
@@ -23,6 +22,8 @@ const routes: Routes = [
     path: 'flutes',
     loadChildren: () => import('./flutes/flutes.module').then( m => m.FlutesPageModule)
   },
+  { path: '**', redirectTo: 'landing', pathMatch: 'full' },
+
 ];
 
 @NgModule({
