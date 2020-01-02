@@ -8,7 +8,7 @@ import { Protector } from './protector.model';
 @Component({
   selector: 'app-protectors',
   templateUrl: '../shared/product.template/product.html',
-  styleUrls: ['../shared/product.template/product.sass'],
+  styleUrls: ['../shared/product.template/product.sass', './protectors.page.sass'],
 })
 export class ProtectorsPage implements OnInit {
   slideOpts = {

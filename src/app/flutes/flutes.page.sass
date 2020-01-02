@@ -1,64 +1,38 @@
 ion-card
-    width: 96%
-    margin: 1rem auto
-    
     ion-row
         .description-col
-            background-color: greenyellow
-            ion-card-header
-                background-color: greenyellow
-                padding: 0.5rem
-                ion-card-title
-                    --color: hotpink
-                    font-size: 1.8rem
-                ion-list, ion-item
-                    --border-color: hot-pink
-                    background-color: greenyellow
-                    --background: greenyellow
-                    --color: hotpink
-                    font-size: 1.2rem
+            background-color: #DAC4C5
+            h1
+                color: white
+            ion-list
+                --background-color: #DAC4C5
+                background-color: #DAC4C5
+                ion-item
+                    background-color: #DAC4C5
+                    --background: #DAC4C5
+                    --border-color: rgba(116,124,102, 0.4)
+                    ion-label
+                        --color:#D1536B
+                    ion-icon
+                        color: #747C66
                
-        ion-col
-            display: flex
-            align-items: center
-            justify-content: center
+        .selection-col
             ion-card-content
-                margin: 1rem auto
-                ion-card-subtitle,h1
-                    font-size: 1.5rem
-               
                 .rose-gold
                     color: #b76e79
                 ion-slides
                     ion-slide
-                        display: flex
-                        flex-direction: column
-                        align-items: center
-                        justify-content: center
                         img
-                            object-fit: fit
+                            object-fit: contain
                             object-position: 50% 50%
-                            border: 0.05rem solid black
-                            border-radius: 50%
-                            height: 40vh
-                            width: 40vh
-                .color-buttons
-                    display: flex
-                    justify-content: center
-                    align-items: center
-                    height: 8vh
-                    .color-button
-                        color: transparent
-                        --color: transparent
-                        border-radius: 50%
-                        --border-radius: 50%
-                        height: 8vh
-                        width: 8vh
+                        
+                ion-buttons
                     .rose-gold
                         background-color: #b76e79
                 .buy-button__container
-                    display: flex
-                    justify-content: center
-                    align-items: center
                     ion-button
-                        --border-radius: 10rem
+                        --color: #DDDEE2
+                        --color-hover: #EFEFED
+                        --background-hover: #D1536B
+                        --border-color: #D68F66
+                        --background: #D68F66

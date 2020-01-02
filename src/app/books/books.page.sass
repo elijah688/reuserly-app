@@ -1,0 +1,166 @@
+ion-card
+    ion-row
+        .description-col
+            background-color: #DAC4C5
+            justify-content: space-around 
+
+            ion-list
+                h1
+                    color: #D1536B
+
+                --background-color: #DAC4C5
+                background-color: #DAC4C5
+                ion-item
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    background-color: #DAC4C5
+                    --background: #DAC4C5
+                    --border-color: rgba(116,124,102, 0.4)
+                    ion-label
+                        --color:#D1536B
+                    ion-icon
+                        color: #747C66
+
+            .buy-button__container
+                display: flex
+                justify-content: center
+                align-items: center
+                ion-button
+                    --color: #DDDEE2
+                    --color-hover: #EFEFED
+                    --background-hover: #D1536B
+                    --border-color: #D68F66
+                    --background: #D68F66
+                    outline: none
+                    --border-radius: 50px
+                    font-size: 1.1rem
+                    transition: transform 0.2s ease-out
+                    &:hover
+                        transform: translateY(-0.5rem)
+
+        .selection-col
+            ion-card-content
+                .black
+                    color: black
+              
+                img
+                    object-fit: fit
+                    object-position: 50% 50%
+
+                ion-list
+                    ion-item
+                        --border-color: rgba(116,124,102, 0.4)
+                        ion-label
+                            --color:#D1536B
+                        ion-icon
+                            color: #747C66
+
+
+                .description-col
+                    ion-list
+                        h1
+                            font-size: 2rem
+                        ion-item
+                            ion-label
+                                font-size: 1.5rem
+                            ion-icon
+                                font-size: 1.5rem
+
+
+                    .buy-button__container
+                        ion-button
+                            font-size: 2rem
+                        
+
+// IPAD PRO LANDSCAPE
+@media only screen and (min-width: 1360px) and (orientation: landscape)
+    // and (max-height: 1050px)
+    ion-card
+        ion-grid
+            ion-row
+                .selection-col
+                     ion-list
+                        ion-item
+                            ion-label
+                                font-size: 2rem
+                            ion-icon
+                                font-size: 2rem
+
+                .description-col
+                    ion-list
+                        h1
+                            font-size: 2rem
+                        ion-item
+                            ion-label
+                                font-size: 1.5rem
+                            ion-icon
+                                font-size: 1.5rem
+
+
+                    .buy-button__container
+                        ion-button
+                            font-size: 2rem
+
+
+// FULL SCREEN
+@media only screen and (min-width: 900px)
+    ion-card
+        ion-grid
+            ion-row
+                .selection-col
+                    ion-card-content
+                        img
+                            height: 65vh
+                            width: 50vh
+//Pre Phone Screen
+@media only screen and (min-width: 500px) and (max-height: 700px)
+    ion-card
+        ion-grid
+            ion-row
+                .selection-col
+                    ion-card-content
+                        img
+                            height: 65vh
+                            width: 50vh
+// IPAD PRO PORTRAIT
+@media only screen and (min-height: 1360px) and (orientation: portrait) 
+    // and (max-width: 1050px)
+    ion-card
+        ion-grid
+            ion-row
+                .selection-col
+                    ion-card-content
+                        img
+                            height: 50vw
+                            width: 50vw
+
+                        ion-list
+                            ion-item
+                                ion-label
+                                    font-size: 2rem
+                                ion-icon
+                                    font-size: 2rem
+                .description-col
+                    ion-list
+                        h1
+                            font-size: 2rem
+                        ion-item
+                            ion-label
+                                font-size: 1.2rem
+                            
+                    .buy-button__container
+                        ion-button
+                            font-size: 2rem
+
+
+//PHONE LANDSCAPE
+@media only screen and (max-height: 414px) and (orientation: landscape)
+     ion-card
+        ion-grid
+            ion-row
+                .selection-col
+                    ion-card-content
+                        img
+                            height: 55vw
+                            width: 45vw

@@ -20,18 +20,17 @@
 </ion-header>
 
 <ion-content>
-  
   <ion-card *ngFor="let p of products">
 
     <ion-grid class='ion-no-padding'>
 
       <ion-row >
 
-        <ion-col  class='description-col' size-xs=12 size-sm=12 size-md=6 size-lg=6 size-xl=6>
+        <ion-col  class='description-col ion-padding' size-xs=12 size-sm=12 size-md=6 size-lg=6 size-xl=6>
 
-          <h1 class="ion-no-margin" >{{p.title | uppercase}}</h1>
+          <h1 class="ion-no-margin ion-padding" >{{p.title | uppercase}}</h1>
 
-          <ion-list>
+          <ion-list class='ion-padding'> 
             
             <ion-item *ngFor="let d of p.description"> 
               <ion-icon name="checkmark" slot="start"></ion-icon>
@@ -42,15 +41,15 @@
 
           </ion-list>
 
-        </ion-col >
+        </ion-col>
 
-        <ion-col class='selection-col' size-xs=12 size-sm=12 size-md=6 size-lg=6 size-xl=6>
+        <ion-col class='selection-col ion-padding' size-xs=12 size-sm=12 size-md=6 size-lg=6 size-xl=6>
          
           <ion-card-content *ngIf="p.colors" class='ion-no-padding'>
 
             <ion-slides #slides class='ion-magrin-top' pager="false" scrollbar='false' [options]="slideOpts">
              
-              <ion-slide *ngFor="let c of s.colors">
+              <ion-slide *ngFor="let c of p.colors">
 
                 <img [src]="c.image" [alt]='c.value'/>
                 
@@ -62,8 +61,8 @@
             </ion-slides>
 
             <ion-buttons class="ion-magrin-top">
-              <ion-button fill="clear" *ngFor="let c of s.colors; let i = index" [ngClass]="hasNumber(c.value)===true ? 'uncolored-product-button' : c.value" (click)='slides.slideTo(i); setCurrentColor(c);'>
-                {{c.value}}
+              <ion-button [ngClass]="c.value" fill="clear" *ngFor="let c of p.colors; let i = index"  (click)='slides.slideTo(i); setCurrentColor(c);'>
+                <!-- {{c.value}} -->
               </ion-button>
             </ion-buttons>
 
@@ -82,9 +81,9 @@
              
               <ion-slide *ngFor="let s of p.sizes">
 
-                <img [src]="s.image" [alt]='s.size'/>
+                <img class='ion-margin-vertical' [src]="s.image" [alt]='s.size'/>
                 
-                <h1 class='item-color ion-padding-top' [ngClass]="s.value">{{ s.size | uppercase}}</h1>
+                <h1 class='item-color ion-padding product-size'>{{ s.size | uppercase}}</h1>
 
                 <h1 class='item-price ion-padding' [ngStyle]='{color: (s.price===0.00) ? "red" : "var(--ion-color-medium)" }'>{{s.price | outOfStock}}</h1>
 
@@ -104,7 +103,7 @@
               </ion-button>
             </div>
 
-        </ion-card-content>
+          </ion-card-content>
 
         </ion-col>
       </ion-row>

@@ -3,11 +3,12 @@ import { Subscription } from 'rxjs';
 import { ShopService } from '../shared/services/shop.service';
 import { Flute } from './flute.model';
 import { Color } from '../shared/models/color.model';
+import { StoreLink, links, SocialLink } from '../shared/links/links';
 
 @Component({
   selector: 'app-flutes',
-  templateUrl: './flutes.page.html',
-  styleUrls: ['./flutes.page.sass'],
+  templateUrl: '../shared/product.template/product.html',
+  styleUrls: ['../shared/product.template/product.sass', './flutes.page.sass'],
 })
 export class FlutesPage implements OnInit {
   slideOpts = {
@@ -16,16 +17,18 @@ export class FlutesPage implements OnInit {
   };
   
   private fluteSub:Subscription = new Subscription();
-  flutes:Flute[];
+  products:Flute[];
   currentColor:Color;
+  stores:StoreLink[] = links.stores
+  socials:SocialLink[] = links.socials
 
   constructor(private shopServ:ShopService) { }
 
   ngOnInit():void {
     this.shopServ.getFlutes();
     this.fluteSub = this.shopServ.flutesSubject.subscribe(flutes=>{
-      this.flutes = flutes;
-      this.currentColor = this.flutes[0].colors[0];
+      this.products = flutes;
+      this.currentColor = this.products[0].colors[0];
     })   
   }
 
@@ -33,13 +36,7 @@ export class FlutesPage implements OnInit {
     this.fluteSub.unsubscribe()
   }
 
-  hasNumber(color:string) {
-    return /\d/.test(color);
-  }
-
   setCurrentColor(c:Color):void{
-    console.log('setting current color...')
     this.currentColor = c;
   }
-
 }

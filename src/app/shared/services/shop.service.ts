@@ -5,6 +5,7 @@ import { Straw } from '../../straws/straw.model';
 import { Subject, Observable } from 'rxjs';
 import { Flute } from '../../flutes/flute.model';
 import { Protector } from 'src/app/protectors/protector.model';
+import { Book } from 'src/app/books/books.model';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,7 @@ export class ShopService {
   private _strawSubject: Subject<Straw[]> = new Subject<Straw[]>(); 
   private _fluteSbject: Subject<Flute[]> = new Subject<Flute[]>(); 
   private _protectorsSubject: Subject<Protector[]> = new Subject<Protector[]>(); 
+  private _bookSubject:Subject<Book[]> = new Subject<Book[]>();
 
   constructor(private http: HttpClient) { }
 
@@ -37,6 +39,14 @@ export class ShopService {
     })
   }
 
+  getBooks():void{
+    const booksApiUrl:string = environment.booksApiUrl;
+
+    this.http.get<{books:Book[]}>(booksApiUrl).subscribe(res=>{
+      this._bookSubject.next(res.books)
+    })
+  }
+
   get strawSubject():Observable<Straw[]>{
     return this._strawSubject.asObservable();
   }
@@ -47,5 +57,9 @@ export class ShopService {
 
   get protectorsSubject():Observable<Protector[]>{
     return this._protectorsSubject.asObservable()
+  }
+
+  get bookSubject():Observable<Book[]>{
+    return this._bookSubject.asObservable()
   }
 }
