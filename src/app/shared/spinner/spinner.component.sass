@@ -1,0 +1,55 @@
+.lds-ring
+  display: inline-block
+  position: relative
+  width: 80px
+  height: 80px
+ 
+
+  div
+    box-sizing: border-box
+    display: block
+    position: absolute
+    width: 64px
+    height: 64px
+    margin: 8px
+    // border: 8px solid red
+    border-radius: 50%
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite
+    // border-color: red transparent transparent transparent
+
+  .straw-spinner
+    border: 8px solid #D8EA85
+    border-color: #D8EA85 transparent transparent transparent
+
+  .protector-spinner
+    border: 8px solid #BFB7AA
+    border-color: #BFB7AA transparent transparent transparent
+
+  .flute-spinner
+    border: 8px solid #DAC4C5
+    border-color: #DAC4C5 transparent transparent transparent
+    
+  .book-spinner
+    border: 8px solid #ADC1C7
+    border-color: #ADC1C7 transparent transparent transparent
+
+    &:nth-child(1)
+      animation-delay: -0.45s
+
+    &:nth-child(2)
+      animation-delay: -0.3s
+
+    &:nth-child(3)
+      animation-delay: -0.15s
+
+
+
+
+@keyframes lds-ring
+  0%
+    transform: rotate(0deg)
+
+  100%
+    transform: rotate(360deg)
+
+ 

@@ -4,6 +4,7 @@ import { StoreLink, SocialLink, links } from '../shared/links/links';
 import { Subscription } from 'rxjs';
 import { Size } from '../shared/models/size.model';
 import { Protector } from './protector.model';
+import { Color } from '../shared/models/color.model';
 
 @Component({
   selector: 'app-protectors',
@@ -19,8 +20,11 @@ export class ProtectorsPage implements OnInit {
   private prodSub:Subscription = new Subscription();
   products:Protector[];
   currentSize:Size;
+  currentColor:Color;
   stores:StoreLink[] = links.stores
   socials:SocialLink[] = links.socials
+  loading:boolean = true;
+  spinnerClass:string = 'protector-spinner'
   constructor(private shopServ:ShopService) { }
 
   ngOnInit():void {
@@ -28,7 +32,7 @@ export class ProtectorsPage implements OnInit {
     this.prodSub = this.shopServ.protectorsSubject.subscribe(protectors =>{
       this.products = protectors;
       this.currentSize = this.products[0].sizes[0];
-      console.log(this.products)
+      this.loading = false;
     })   
   }
 
@@ -36,13 +40,13 @@ export class ProtectorsPage implements OnInit {
     this.prodSub.unsubscribe()
   }
 
-  hasNumber(color:string) {
-    return /\d/.test(color);
+  setCurrentColor(c:Color){
+    this.currentColor = c;
   }
 
-  setCurrentSize(size:Size){
-    this.currentSize = size;
-    console.log('current size is: ' + this.currentSize.size)
+  setCurrentSize(s:Size):void{
+    this.currentSize = s;
   }
+
 
 }

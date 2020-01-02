@@ -4,6 +4,7 @@ import { ShopService } from '../shared/services/shop.service';
 import { Flute } from './flute.model';
 import { Color } from '../shared/models/color.model';
 import { StoreLink, links, SocialLink } from '../shared/links/links';
+import { Size } from '../shared/models/size.model';
 
 @Component({
   selector: 'app-flutes',
@@ -19,8 +20,11 @@ export class FlutesPage implements OnInit {
   private fluteSub:Subscription = new Subscription();
   products:Flute[];
   currentColor:Color;
+  currentSize:Size;
   stores:StoreLink[] = links.stores
   socials:SocialLink[] = links.socials
+  loading:boolean = true;
+  spinnerClass:string = 'flute-spinner'
 
   constructor(private shopServ:ShopService) { }
 
@@ -29,6 +33,7 @@ export class FlutesPage implements OnInit {
     this.fluteSub = this.shopServ.flutesSubject.subscribe(flutes=>{
       this.products = flutes;
       this.currentColor = this.products[0].colors[0];
+      this.loading = false;
     })   
   }
 
@@ -36,7 +41,12 @@ export class FlutesPage implements OnInit {
     this.fluteSub.unsubscribe()
   }
 
-  setCurrentColor(c:Color):void{
+  setCurrentColor(c:Color){
     this.currentColor = c;
   }
+
+  setCurrentSize(s:Size):void{
+    this.currentSize = s;
+  }
+  
 }

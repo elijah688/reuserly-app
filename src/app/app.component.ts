@@ -3,6 +3,7 @@ import { Component, HostListener } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { StoreLink, links } from './shared/links/links';
 
 @Component({
   selector: 'app-root',
@@ -10,34 +11,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
   styleUrls: ['app.component.sass']
 })
 export class AppComponent {
-  stores = [
-    {
-      'title': 'Straws',
-      'icon': 'color-wand',
-      'link' : '/straws',
-      'color': '#E63135'
-    },
-    {
-      'title': 'Protectors',
-      'icon': 'phone-portrait',
-      'link' : '/protectors',
-      'color': '#0CA9EA'
-    },
-    {
-      'title': 'Flutes',
-      'icon': 'wine',
-      'link' : '/flutes',
-      'color': '#b76e79'
-    },
-    {
-      'title': 'Reuserly Books',
-      'icon': 'book',
-      'link' : '/books',
-      'color': '#F46529'
-    },
-  ];
-
-
+  stores:StoreLink[] = links.stores
 
   constructor(
     private platform: Platform,
@@ -46,8 +20,6 @@ export class AppComponent {
   ) {
     this.initializeApp();
   }
-
- 
 
   initializeApp() {
     this.platform.ready().then(() => {

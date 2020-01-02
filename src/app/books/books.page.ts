@@ -16,18 +16,18 @@ export class BooksPage implements OnInit, OnDestroy {
   };
   
   private bookSub:Subscription = new Subscription();
-  
-
   products:Book[];
   stores:StoreLink[] = links.stores
   socials:SocialLink[] = links.socials
-
+  loading:boolean = true;
+  spinnerClass:string = 'book-spinner'
   constructor(private shopServ:ShopService) { }
 
   ngOnInit() {
     this.shopServ.getBooks()
     this.bookSub = this.shopServ.bookSubject.subscribe(books=>{
       this.products = books;
+      this.loading = false;
     })
   }
 

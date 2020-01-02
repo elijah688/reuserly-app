@@ -7,12 +7,14 @@ import { IonicModule } from '@ionic/angular';
 import { BooksPageRoutingModule } from './books-routing.module';
 
 import { BooksPage } from './books.page';
+import { SpinnerModule } from '../shared/spinner/spinner.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    SpinnerModule,
     BooksPageRoutingModule
   ],
   declarations: [BooksPage]

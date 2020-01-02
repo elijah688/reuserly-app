@@ -8,6 +8,7 @@ import { FlutesPageRoutingModule } from './flutes-routing.module';
 
 import { FlutesPage } from './flutes.page';
 import { SharedModule } from '../shared/shared.module';
+import { SpinnerModule } from '../shared/spinner/spinner.module';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { SharedModule } from '../shared/shared.module';
     SharedModule,
     FormsModule,
     IonicModule,
+    SpinnerModule,
     FlutesPageRoutingModule
   ],
   declarations: [FlutesPage]

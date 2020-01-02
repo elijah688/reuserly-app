@@ -4,6 +4,7 @@ import { ShopService } from '../shared/services/shop.service';
 import { Straw } from './straw.model';
 import { SocialLink, StoreLink, links } from '../shared/links/links';
 import { Color } from '../shared/models/color.model';
+import { Size } from '../shared/models/size.model';
 
 @Component({
   selector: 'app-straws',
@@ -21,6 +22,9 @@ export class StrawsPage implements OnInit {
   stores:StoreLink[] = links.stores
   socials:SocialLink[] = links.socials
   currentColor:Color;
+  currentSize:Size;
+  loading:boolean = true;
+  spinnerClass:string = 'straw-spinner'
   constructor(private shopServ:ShopService) { }
 
   ngOnInit():void {
@@ -28,6 +32,7 @@ export class StrawsPage implements OnInit {
     this.strawsSub = this.shopServ.strawSubject.subscribe(strwas=>{
       this.products = strwas;
       this.currentColor = this.products[0].colors[0];
+      this.loading = false;
     })   
   }
 
@@ -37,6 +42,10 @@ export class StrawsPage implements OnInit {
 
   setCurrentColor(c:Color){
     this.currentColor = c;
-    console.log('current color is: ' + this.currentColor.value)
   }
+
+  setCurrentSize(s:Size):void{
+    this.currentSize = s;
+  }
+
 }

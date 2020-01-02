@@ -8,6 +8,7 @@ import { ProtectorsPageRoutingModule } from './protectors-routing.module';
 
 import { ProtectorsPage } from './protectors.page';
 import { SharedModule } from '../shared/shared.module';
+import { SpinnerModule } from '../shared/spinner/spinner.module';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { SharedModule } from '../shared/shared.module';
     FormsModule,
     IonicModule,
     SharedModule,
+    SpinnerModule,
     ProtectorsPageRoutingModule
   ],
   declarations: [ProtectorsPage]

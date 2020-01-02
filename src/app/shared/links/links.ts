@@ -16,25 +16,25 @@ export const links: {stores:StoreLink[],socials:SocialLink[]} =  {
       'title': 'Straws',
       'icon': 'color-wand',
       'link' : '/straws',
-      'color': '#E63135'
+      'color': '#9FB540'
     },
     {
       'title': 'Protectors',
       'icon': 'phone-portrait',
       'link' : '/protectors',
-      'color': '#0CA9EA'
+      'color': '#83796C'
     },
     {
       'title': 'Flutes',
       'icon': 'wine',
       'link' : '/flutes',
-      'color': '#b76e79'
+      'color': '#A1888A'
     },
     {
       'title': 'Reuserly Books',
       'icon': 'book',
       'link' : '/books',
-      'color': '#F46529'
+      'color': '#6E858B'
     },
     ],
     socials : [

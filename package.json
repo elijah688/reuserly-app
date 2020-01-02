@@ -1,8 +1,8 @@
 {
-  "name": "barny-app",
+  "name": "reuserly-app",
   "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "https://ionicframework.com/",
+  "author": "Elijah Iliev",
+  "homepage": "https://github.com/elijah688",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -54,5 +54,5 @@
     "tslint": "~5.15.0",
     "typescript": "~3.4.3"
   },
-  "description": "An Ionic project"
+  "description": "Reuserly ltd.'s Home Page"
 }

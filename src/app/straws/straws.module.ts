@@ -8,10 +8,12 @@ import { StrawsPageRoutingModule } from './straws-routing.module';
 
 import { StrawsPage } from './straws.page';
 import { SharedModule } from '../shared/shared.module';
+import { SpinnerModule } from '../shared/spinner/spinner.module';
 
 @NgModule({
   imports: [
     CommonModule,
+    SpinnerModule,
     FormsModule,
     SharedModule,
     IonicModule,
